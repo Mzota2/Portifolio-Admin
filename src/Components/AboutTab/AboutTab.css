@@ -1,0 +1,41 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.about-submit{
+    width: 200px;
+    align-self: center;
+}
+
+/* ABOUT TAB STYLING */
+.about-row{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.082);
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px rgb(126, 126, 126);
+}
+.about-edit-btn{
+    border-radius: 5px 0px 0px 5px !important;
+    
+}
+.about-delete-btn{
+    border-radius: 0px 5px 5px 0px !important;
+}
+.btn-container{
+    margin-top: 10px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+}
+.upload--container{
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.upload--image{
+    width: 300px;
+}

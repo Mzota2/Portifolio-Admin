@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>PORTIFOLIO</h1>
+    <script >
+/// "http://127.0.0.1:5500"
+
+        async function getHome(){
+            //http://localhost:2000/api/home;
+            //https://kc-portifolio-backend.onrender.com
+            await fetch('https://kc-portifolio-backend.onrender.com/api/home').then(async(res)=>{
+                const data = await res.json();
+                console.log(data)
+            })
+        }
+
+        async function getAbout(){
+            //http://localhost:2000/api/home;
+            await fetch('http://localhost:2000/api/about').then(async(res)=>{
+                const data = await res.json();
+                console.log(data)
+            })
+        }
+
+        async function getServices(){
+            //http://localhost:2000/api/home;
+            await fetch('http://localhost:2000/api/service').then(async(res)=>{
+                const data = await res.json();
+                console.log(data)
+            })
+        }
+
+        async function getContact(){
+            //http://localhost:2000/api/home;
+            await fetch('http://localhost:2000/api/contact').then(async(res)=>{
+                const data = await res.json();
+                console.log(data)
+            })
+        }
+
+        async function getProjects(){
+            //http://localhost:2000/api/home;
+            await fetch('http://localhost:2000/api/project').then(async(res)=>{
+                const data = await res.json();
+                console.log(data)
+            })
+        }
+
+        async function createMessage(){
+            //http://localhost:2000/api/home;
+            await fetch('http://localhost:2000/api/message',
+            {
+                method:'POST',
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            }
+            ).then(async(res)=>{
+                const data = await res.json();
+                console.log(data)
+            })
+        }
+
+
+        getHome();
+        getAbout();
+        getServices();
+        getProjects();
+
+
+
+    </script>
+</body>
+</html>
