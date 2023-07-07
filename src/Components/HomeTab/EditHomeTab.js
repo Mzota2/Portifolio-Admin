@@ -88,10 +88,20 @@ function EditHomeTab() {
             });
             const formData = new FormData();
             const fileList = homeBackgroundImages;
-            for (let index = 0; index < fileList.length; index++) {
-                const file = fileList[index];
-                formData.append('testImage', file);
+            const existingList = home.backgroundImage;
+            if(!fileList){
+                for (let index = 0; index < existingList.length; index++) {
+                    const file = existingList[index];
+                    formData.append('testImage', file);
+                }
             }
+            else{
+                for (let index = 0; index < fileList.length; index++) {
+                    const file = fileList[index];
+                    formData.append('testImage', file);
+                }
+            }
+            
             formData.append('hello', home.hello);
             formData.append('description', home.description)
 
@@ -145,7 +155,7 @@ function EditHomeTab() {
                             home.backgroundImage?.map((image)=>{
                                 return(
                                     <div key={image}>
-                                        {image.length>30?<img className='upload--image' src={require(`../../uploads/${image?.slice(30)}`)} alt='home'/>:<></>}
+                                        { image.length>30?<img className='upload--image' src={`${appUrl}/${image}`} alt='home'/>:<></>} 
                                     </div>
                                     
                                 )

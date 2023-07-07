@@ -148,7 +148,7 @@ function EditAboutTab() {
                         <Form.Control name='upload'  onChange={onChangeAboutImage} type='file' placeholder='Enter About Image' />
                         <br/>
                         {
-                            about.about_image?<img className='upload--image' src={require(`../../uploads/${about.about_image.slice(30)}`)} alt='about'/>:<></>
+                            about.about_image?<img className='upload--image' src={`${appUrl}/${about.about_image}`} alt='about'/>:<></>
                         }
                     </Form.Group>
 

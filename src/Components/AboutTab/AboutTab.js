@@ -12,6 +12,8 @@ function AboutTab() {
     const accessToken =  getAccessToken();
 
     const appUrl = process.env.REACT_APP_SERVER_URL;
+    const [imageSource, setImageSource] = React.useState('');
+
 
     async function getAbout(){
         try {
@@ -99,7 +101,7 @@ function AboutTab() {
                 <div className='upload--container'>
                     {item?.about_image?
                             <div >
-                                {item.about_image.length>30?<img className='upload--image' src ={require(`../../uploads/${item.about_image.slice(30)}`)} alt='logo'/>:<></>} 
+                                {item.about_image.length>30?<img className='upload--image' src ={`${appUrl}/${item.about_image}`} alt='logo'/>:<></>} 
                             </div>:<></>
                         //{String(item.backgroundImage).length>30?<img className='home--image' src ={require(`../../uploads/${image}`)} alt='logo'/>:<></>}
                     }

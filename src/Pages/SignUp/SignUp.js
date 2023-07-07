@@ -3,6 +3,7 @@ import { FormCheck, Form, Button, Spinner } from 'react-bootstrap';
 import './SignUp.css';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
+import {useMediaQuery} from '@mui/material'
 function SignUp() {
   const [user,  setUser] = React.useState({
     username:'',
@@ -11,7 +12,7 @@ function SignUp() {
   });
   const appUrl = process.env.REACT_APP_SERVER_URL;
   const [isLoading, setIsLoading] = React.useState(false);
-
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const navigate = useNavigate();
 
   function onChangeUsername(e){
@@ -71,7 +72,7 @@ function SignUp() {
 
   return (
     <div >
-      {isLoading?<Spinner animation='border' variant='info'/>:<div className='form-container'>
+      {isLoading?<Spinner animation='border' variant='info'/>: isNonMobileScreens?<div className='form-container'>
       <div className='left'>
         
         </div>
@@ -99,7 +100,29 @@ function SignUp() {
             <Button onClick={handleSubmit} variant='warning' className='sign-up-btn'>Sign Up</Button>
           </Form>
         </div>
-      </div>}
+      </div>: <div style={{width:'100%'}} className='right'>
+          <h2>Sign Up</h2>
+        <Form style={{width:'80%'}} className='form' >
+          <div>
+          <Form.Group className='mb-3'>
+              <Form.Label>Username</Form.Label>
+              <Form.Control value={user.username} onChange={onChangeUsername} type='text' placeholder='Enter username...'/>
+            </Form.Group>
+  
+            <Form.Group className='mb-3'>
+              <Form.Label>Email</Form.Label>
+              <Form.Control value={user.email} onChange={onChangeEmail} type='email' placeholder='Enter Email...'/>
+            </Form.Group>
+  
+            <Form.Group className='mb-3'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control value={user.password} onChange={onChangePassword} type='password' placeholder='Enter Password...'/>
+            </Form.Group>
+          </div>
+            
+            <Button onClick={handleSubmit} variant='warning' className='sign-up-btn'>Sign Up</Button>
+          </Form>
+        </div>}
     </div>
   )
 }

@@ -96,7 +96,7 @@ function HomeTab() {
                         const image = String(imagePath).slice(30)
                         return(
                             <div key={imagePath}>
-                                {String(imagePath).length>30?<img className='upload--image' src ={require(`../../uploads/${image}`)} alt='logo'/>:<></>} 
+                                { String(imagePath).length?<img className='upload--image' src ={`${appUrl}/${imagePath}`} alt='logo'/>:<></> }
                             </div>
                         //{String(item.backgroundImage).length>30?<img className='home--image' src ={require(`../../uploads/${image}`)} alt='logo'/>:<></>}
                         )

@@ -89,7 +89,7 @@ function ProjectsTab() {
                 <Accordion.Body>
                 {item?.project_image?
                             <div >
-                                {item.project_image.length>30?<img className='upload--image' src ={require(`../../uploads/${item.project_image.slice(30)}`)} alt='logo'/>:<></>} 
+                                {item.project_image.length>30?<img className='upload--image' src ={`${appUrl}/${item.project_image}`} alt='logo'/>:<></>}
 
                             </div>:<></> }
                 </Accordion.Body>

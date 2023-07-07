@@ -140,10 +140,7 @@ function EditProjectsTab() {
                     <Form.Label>Project Image</Form.Label>
                     <Form.Control onChange={onChangeProjectImage} type='file' placeholder='Upload Image' />
                     <br/>
-                    {
-                        project.project_image?<img className='upload--image' src={require(`../../uploads/${project?.project_image?.slice(30)}`)} alt='project'/>:<></>}
-                    
-                    
+                    { project.project_image?<img className='upload--image' src={`${appUrl}/${project.project_image}`} alt='project'/>:<></>}
                 </Form.Group>
             </Col>
 
