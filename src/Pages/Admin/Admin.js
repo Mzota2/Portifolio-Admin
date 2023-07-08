@@ -5,6 +5,7 @@ import ProjectsTab from '../../Components/ProjectsTab/ProjectsTab'
 import ServicesTab from '../../Components/ServicesTab/ServicesTab'
 import ContactTab from '../../Components/ContactTab/ContactTab'
 import Tab1 from '../../Components/Tabs/Tab1'
+import SuccessError from '../../Components/SuccessError/SuccessError'
 function Admin() {
   const [active, setActive] = React.useState('');
 
@@ -13,6 +14,7 @@ function Admin() {
   }
   return (
     <div>
+     <SuccessError message={'Successfully Loged In'} heading={'Success'} variant={'success'}/>
       <br/>
       <Tab1 setActive ={handleActiveTab}/>
       <br/>
