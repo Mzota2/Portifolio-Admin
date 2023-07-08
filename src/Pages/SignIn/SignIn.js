@@ -6,6 +6,7 @@ import {setAccessToken} from '../../Helpers';
 import {useNavigate} from 'react-router-dom';
 import {useUserContext} from '../../Context'
 import {useMediaQuery} from '@mui/material'
+import SuccessError from '../../Components/SuccessError/SuccessError';
 function SignIn() {
   const [user,  setUserData] = React.useState({
     email:'',
@@ -72,9 +73,9 @@ function SignIn() {
   return (
     <div>
       {isLoading?<Spinner animation='border' variant='info'/>: isNonMobileScreens?<div className='form-container'>
-        {
-          
-        }
+        
+        
+        
       <div className='left'>
         
         </div>
@@ -115,6 +116,7 @@ function SignIn() {
             <Button onClick={handleSubmit} variant='warning' className='sign-in-btn'>Sign In</Button>
           </Form>
         </div>}
+       
     </div>
   )
 }

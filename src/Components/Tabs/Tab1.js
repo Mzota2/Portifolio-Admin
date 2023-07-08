@@ -16,7 +16,7 @@ function Tab1({setActive}) {
 
 
   return (
-    <Nav >
+    <Nav style={{padding:"0px 10px"}}>
         {isNonMobileScreens?<Nav style={{width:'100%'}} justify bg='dark' variant="tabs" activeKey={activeKey} onSelect={handleSelect}>
 
         <Nav.Item>
