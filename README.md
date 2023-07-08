@@ -1,5 +1,5 @@
  
-<img width='100' src='../admin//src/logo.svg' />  
+<img width='100' src='../admin/src/logo.svg' />  
 
 # Getting Started with Admin App 
 
